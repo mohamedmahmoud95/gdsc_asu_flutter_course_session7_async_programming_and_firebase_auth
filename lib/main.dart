@@ -17,9 +17,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  void getData(){
+
+
+    Future.delayed(const Duration (seconds: 3), () {
+      debugPrint("first print statement, after 3 seconds");
+    });
+
+    Future.delayed(const Duration (seconds: 1), (){
+    debugPrint("first print statement, after 1 second");
+    });
+
+    debugPrint("third print statement, with no delay");
+
+  }
+
+   @override void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AsyncPage(
 
